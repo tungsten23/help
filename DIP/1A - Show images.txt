@@ -3,13 +3,13 @@ img2 = imread('C:\Ak Msc CS\Image Processing\cam.png');
 img3 = imread('C:\Ak Msc CS\Image Processing\color.png');
 
 figure(1);
-title('Black and White Image: Pratyush Sharma 24');
+title('Black and White Image: Name 24');
 imshow(img1);
 
 figure(2);
-title('Camera Man Image: Pratyush Sharma 24');
+title('Camera Man Image: Name 24');
 imshow(img2);
 
 figure(3);
-title('Color Image: Pratyush Sharma 24');
+title('Color Image: Name 24');
 imshow(img3);

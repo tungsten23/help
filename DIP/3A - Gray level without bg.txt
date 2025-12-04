@@ -1,4 +1,4 @@
-f = imread("D:\Pratyush MScCs\DIP\images\man.jpg");
+f = imread("D:\Name MScCs\DIP\images\man.jpg");
 [m, n] = size(f);
 L = max(max(f));
 a = round(L/2);
@@ -19,8 +19,8 @@ g = uint8(g);
 
 subplot(1,2,1)
 imshow(f);
-title("Pratyush 24: Original Image");
+title("Name 24: Original Image");
 
 subplot(1,2,2)
 imshow(g);
-title("Pratyush 24: GreyLevel slicing without bg Image");
+title("Name 24: GreyLevel slicing without bg Image");

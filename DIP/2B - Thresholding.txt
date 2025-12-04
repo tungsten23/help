@@ -1,4 +1,4 @@
-f = imread("D:\Pratyush MScCs\DIP\images\caman.jpg");
+f = imread("D:\Name MScCs\DIP\images\caman.jpg");
 [rows, cols] = size(f);
 T = 128;
 g = zeros(rows, cols, "uint8");
@@ -16,8 +16,8 @@ end
 
 subplot(1,2,1)
 imshow(f);
-title("Pratyush 24: Original Image");
+title("Name 24: Original Image");
 
 subplot(1,2,2)
 imshow(g);
-title("Pratyush 24: Thresholding Image");
+title("Name 24: Thresholding Image");

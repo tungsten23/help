@@ -5,7 +5,7 @@ disp(F, 'Discrete Cosine Transform of f(m,n) using dct function');
 
 subplot(221);
 imshow(f);
-title('Pratyush Sharma 24 Image in spatial domain')
+title('Name 24 Image in spatial domain')
 
 subplot(223);
 imshow(F);

@@ -1,4 +1,4 @@
-f = imread("D:\Pratyush MScCs\DIP\images\caman.jpg");
+f = imread("D:\Name MScCs\DIP\images\caman.jpg");
 r1 = 100;
 r2 = 140;
 s1 = 150;
@@ -24,8 +24,8 @@ end
 
 subplot(1,2,1)
 imshow(f);
-title("Pratyush 24: Original Image");
+title("Name 24: Original Image");
 
 subplot(1,2,2)
 imshow(g);
-title("Pratyush 24: Contrast Stretching Image");
+title("Name 24: Contrast Stretching Image");

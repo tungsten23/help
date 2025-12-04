@@ -17,4 +17,4 @@ title('Supressed Image by 30')
 
 subplot(2,2,4)
 imshow(d)
-title('Pratyush Sharma 24 Supressed Image by 40')
+title('Name 24 Supressed Image by 40')

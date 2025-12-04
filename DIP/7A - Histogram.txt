@@ -2,7 +2,7 @@ img = imread("D:\Msc Ak\cam.jpg");
 
 subplot(131)
 imshow(img);
-title("Original Color Image [Pratyush 24]");
+title("Original Color Image [Name 24]");
 
 mg_gray = rgb2gray(img);
 subplot(132)
@@ -14,6 +14,6 @@ nbins = 256;
 
 subplot(133);
 bar(x, h);
-title('Histogram Image [Pratyush 24]');
+title('Histogram Image [Name 24]');
 xlabel('Intensity Values');
 ylabel('Number of Pixels');

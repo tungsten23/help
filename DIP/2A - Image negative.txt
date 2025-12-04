@@ -1,4 +1,4 @@
-f = imread("D:\Pratyush MScCs\DIP\images\bandw.png");
+f = imread("D:\Name MScCs\DIP\images\bandw.png");
 [rows, cols] = size(f);
 g = zeros(rows, cols, "uint8");
 
@@ -11,8 +11,8 @@ end
 
 subplot(1,2,1)
 imshow(f);
-title("Pratyush 24: Original Image");
+title("Name 24: Original Image");
 
 subplot(1,2,2)
 imshow(g);
-title("Pratyush 24: Negative Image");
+title("Name 24: Negative Image");

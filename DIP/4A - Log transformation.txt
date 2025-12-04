@@ -14,4 +14,4 @@ title("Original Image");
 
 subplot(1,2,2);
 imshow(g);
-title("Log Trasnformation Pratyush Sharma 24");
+title("Log Trasnformation Name 24");
