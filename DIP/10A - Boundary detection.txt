@@ -1,0 +1,11 @@
+img = imread("D:\Msc Ak\man.jpg");
+clc;
+se1 = testmatrix('square', 11);
+m1 = imerode(img, se1);
+m2 = img - m1;
+
+subplot(2,1,1), imshow(img);
+title('Orignal image [Pratyush 24]');
+
+subplot(2,1,2), imshow(m2);
+title('Edge detection');

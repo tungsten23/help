@@ -1,0 +1,28 @@
+clear all;
+file = imread("C:\Ak Msc CS\Image Processing\camera.jpg");
+[m, n] = size(file);
+
+for i = 1:m
+    for j = 1:n
+        r = file(i, j);
+        a(i, j) = 20 * (r ^ 0.4);
+        b(i, j) = 20 * (r ^ 0.6);
+        c(i, j) = 20 * (r ^ 0.9);
+    end
+end
+
+subplot(1,4,1);
+imshow(file);
+title("Original Image");
+
+subplot(1,4,2);
+imshow(a);
+title("Ak 24 Exponential Tranform Image");
+
+subplot(1,4,3);
+imshow(b);
+title("Ak 24 Exponential Tranform Image");
+
+subplot(1,4,4);
+imshow(c);
+title("Ak 24 Exponential Tranform Image");

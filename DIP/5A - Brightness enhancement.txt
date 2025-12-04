@@ -1,0 +1,20 @@
+a = imread('C:\Ak Msc CS\Image Processing\camera.jpg');
+b = a + 50;
+c = a + 60;
+d = a + 70;
+
+subplot(2,2,1)
+imshow(a)
+title('Original Image')
+
+subplot(2,2,2)
+imshow(b)
+title('Enhanced Image by 50')
+
+subplot(2,2,3)
+imshow(c)
+title('Enhanced Image by 60')
+
+subplot(2,2,4)
+imshow(d)
+title('Pratyush Sharma 24 Enhanced Image by 70')

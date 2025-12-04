@@ -1,0 +1,56 @@
+// ==================================
+// Huffman Coding
+// ==================================
+
+// ---------- FUNCTION 1 ----------
+function codes = huffman(s, freq)
+n = length(freq);
+pq = list();
+for i = 1:n
+    pq($+1) = list(freq(i), s(i), "", []);
+end
+
+while length(pq) > 1
+    freqList = [];
+    for i = 1:length(pq)
+        freqList(i) = pq(i)(1);
+    end
+    [sortedFreq, idx] = gsort(freqList, "g", "i");
+    pq_sorted = list();
+    for i = 1:length(idx)
+        pq_sorted($+1) = pq(idx(i));
+    end
+
+    left = pq_sorted(1);
+    right = pq_sorted(2);
+
+    pq_new = list();
+    for i = 3:length(pq_sorted)
+        pq_new($+1) = pq_sorted(i);
+    end
+
+    newFreq = left(1) + right(1);
+    newNode = list(newFreq, "", "", list(left, right));
+    pq_new($+1) = newNode;
+    pq = pq_new;
+end
+
+codes = list();
+traverse(pq(1), "", codes);
+endfunction
+
+// ---------- FUNCTION 2 ----------
+function traverse(node, code, codes)
+if isempty(node(4)) then
+    disp("Character: " + string(node(2)) + " Code: " + code);
+    return;
+end
+children = node(4);
+traverse(children(1), code + "0", codes);
+traverse(children(2), code + "1", codes);
+endfunction
+
+// ---------- MAIN PROGRAM ----------
+s = ["a","b","c","d","e","f"];
+freq = [6, 3, 6, 10, 4, 2];
+codes = huffman(s, freq);

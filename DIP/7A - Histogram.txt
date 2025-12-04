@@ -1,0 +1,19 @@
+img = imread("D:\Msc Ak\cam.jpg");
+
+subplot(131)
+imshow(img);
+title("Original Color Image [Pratyush 24]");
+
+mg_gray = rgb2gray(img);
+subplot(132)
+imshow(mg_gray);
+title('GrayScale Image');
+
+nbins = 256;
+[h, x] = imhist(mg_gray, nbins);
+
+subplot(133);
+bar(x, h);
+title('Histogram Image [Pratyush 24]');
+xlabel('Intensity Values');
+ylabel('Number of Pixels');

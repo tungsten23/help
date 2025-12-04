@@ -1,0 +1,26 @@
+f = imread("D:\Pratyush MScCs\DIP\images\man.jpg");
+[m, n] = size(f);
+L = max(max(f));
+a = round(L/2);
+b = L;
+
+for i = 1:m
+    for j = 1:n
+        r = f(i, j);
+        if (r >= a & r <= b)
+            g(i, j) = L;
+        else
+            g(i, j) = 0;
+        end
+    end
+end
+
+g = uint8(g);
+
+subplot(1,2,1)
+imshow(f);
+title("Pratyush 24: Original Image");
+
+subplot(1,2,2)
+imshow(g);
+title("Pratyush 24: GreyLevel slicing without bg Image");

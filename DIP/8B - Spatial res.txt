@@ -1,0 +1,9 @@
+img = imread("D:\Msc Ak\man.jpg");
+a = imresize(img, 0.8);
+b = imresize(img, 0.6);
+c = imresize(img, 0.4);
+
+subplot(2,2,1), imshow(img), title('Original [Pratyush 24]');
+subplot(2,2,2), imshow(a), title('0.8');
+subplot(2,2,3), imshow(b), title('0.6');
+subplot(2,2,4), imshow(c), title('0.4');

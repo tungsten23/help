@@ -1,0 +1,23 @@
+f = imread("D:\Pratyush MScCs\DIP\images\caman.jpg");
+[rows, cols] = size(f);
+T = 128;
+g = zeros(rows, cols, "uint8");
+
+for i = 1:rows
+    for j = 1:cols
+        r = f(i, j);
+        if r > T
+            g(i, j) = 255;
+        else
+            g(i, j) = 0;
+        end
+    end
+end
+
+subplot(1,2,1)
+imshow(f);
+title("Pratyush 24: Original Image");
+
+subplot(1,2,2)
+imshow(g);
+title("Pratyush 24: Thresholding Image");

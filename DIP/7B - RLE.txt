@@ -1,0 +1,18 @@
+data = [1 1 1 2 2 3 3 3 3 4 4 4 5 5 5 6];
+values = [];
+counts = [];
+count = 1;
+n = length(data);
+
+for i = 2:n
+    if data(i) == data(i-1)
+        count = count + 1;
+    else
+        values(end+1) = data(i-1);
+        counts(end+1) = count;
+        count = 1;
+    end
+end
+
+values(end+1) = data(end);
+counts(end

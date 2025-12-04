@@ -1,0 +1,23 @@
+clc;
+f = [1 1 1 1; 1 1 1 1; 1 1 1 1; 1 1 1 1];
+t = fft2(f);
+disp('Pratyush Sharma 24')
+disp('DFT Example')
+disp(f, 'Input Image')
+disp(t, 'display')
+
+clc;
+f = [1 1 0 1; 1 1 1 1; 1 0 1 1; 1 1 1 0];
+F = fft2(f);
+disp('Pratyush Sharma 24')
+disp('DFT Example')
+disp(f, 'Input Image')
+disp(F, 'display')
+
+subplot(221);
+imshow(f);
+title('Image in Spatial Domain')
+
+subplot(223);
+imshow(F);
+title('Image in Frequency Domain')

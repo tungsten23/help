@@ -1,0 +1,110 @@
+clc; clear;
+
+symbols = ["I","N","D","A"];
+freq = [2,1,1,1];
+
+disp("size(symbols): " + string(size(symbols)));
+disp("size(freq): " + string(size(freq)));
+disp("symbols raw:"); disp(symbols);
+disp("freq raw:"); disp(freq);
+disp("====================");
+
+function codes = sf_encode(symbols_in, freq_in)
+    symbols = symbols_in;
+    freq = freq_in;
+
+    probs = zeros(1, length(freq));
+    i = 1;
+    while i <= length(freq)
+        probs(i) = freq(i);
+        i = i + 1;
+    end
+
+    [sorted_freq, order] = gsort(probs, "g", "d");
+
+    sortedSymbols = list();
+    j = 1;
+    while j <= length(order)
+        sortedSymbols($+1) = symbols(order(j));
+        j = j + 1;
+    end
+
+    sortedFreq = zeros(1, length(order));
+    j = 1;
+    while j <= length(order)
+        sortedFreq(j) = sorted_freq(j);
+        j = j + 1;
+    end
+
+    n = length(sortedFreq);
+    codes = list();
+    k = 1;
+    while k <= n
+        codes($+1) = "";
+        k = k + 1;
+    end
+
+    stack = list();
+    stack($+1) = list(1, n, "");
+
+    while length(stack) > 0
+        elem = stack($);
+        stack($) = null();
+        startIdx = elem(1);
+        endIdx = elem(2);
+        prefix = elem(3);
+
+        if startIdx == endIdx then
+            codes(startIdx) = prefix;
+            continue;
+        end
+
+        total = 0;
+        p = startIdx;
+        while p <= endIdx
+            total = total + sortedFreq(p);
+            p = p + 1;
+        end
+
+        half = total / 2;
+        partSum = 0;
+        q = startIdx;
+        splitPoint = startIdx;
+
+        while q <= endIdx
+            partSum = partSum + sortedFreq(q);
+            if partSum >= half then
+                splitPoint = q;
+                break;
+            end
+            q = q + 1;
+        end
+
+        if splitPoint + 1 <= endIdx then
+            stack($+1) = list(splitPoint + 1, endIdx, prefix + "1");
+        end
+
+        stack($+1) = list(startIdx, splitPoint, prefix + "0");
+    end
+
+    output = list();
+    output($+1) = sortedSymbols;
+    output($+1) = codes;
+    output($+1) = sortedFreq;
+    codes = output;
+endfunction
+
+out = sf_encode(symbols, freq);
+sortedSymbols = out(1);
+codesList = out(2);
+sortedFreqNum = out(3);
+
+disp("===== Shannon-Fano result =====");
+
+i = 1;
+while i <= length(sortedSymbols)
+    disp(sortedSymbols(i) + " " + string(sortedFreqNum(i)) + " " + codesList(i));
+    i = i + 1;
+end
+
+disp("================================");
